@@ -3,11 +3,11 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "cassetta-attrezzi"
+name = "attrezzi"
 version = "0.1.0"
-description = "Utility per connessione e gestione dati (Oracle, pandas, dotenv)"
+description = "Utility"
 authors = [
-  { name="Tuo Nome", email="email@example.com" }
+  { name="ing. Comenò", email="rosato.fabio@gmail.com" }
 ]
 dependencies = [
   "oracledb",
