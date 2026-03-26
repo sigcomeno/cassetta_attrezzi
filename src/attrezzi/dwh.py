@@ -3,7 +3,7 @@ import pandas as pd
 import os
 from dotenv import load_dotenv
 
-def connessione_DW( client_locale= "C:/Users/fabio.rosato2/instantclient_21_14"):
+def connessione_DW(tab:str , client_locale= "C:/Users/fabio.rosato2/instantclient_21_14"):
     load_dotenv()
     user = os.getenv("user")
     pssw= os.getenv("pssw")
@@ -12,14 +12,14 @@ def connessione_DW( client_locale= "C:/Users/fabio.rosato2/instantclient_21_14")
     oracledb.init_oracle_client(lib_dir = client_locale) 
     try: 
         connection = oracledb.connect(user=user, password=pssw, dsn=dsn)
-        print("Connessione riuscita al DW")
+        print(f"Connessione riuscita a {tab}")
     except:
         connection = False
-        print("Connessione fallita al DW")
+        print(f"Connessione fallita al {tab}")
     return connection
 
 def getTabella( nome:str , schema="UNIBO_PSV"):
-    connection = connessione_DW()
+    connection = connessione_DW(tab = nome)
 
     cursor = connection.cursor()
     sql = f"select * from {schema}.{nome}"
