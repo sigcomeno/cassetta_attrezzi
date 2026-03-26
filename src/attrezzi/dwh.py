@@ -33,5 +33,3 @@ def getTabella( nome:str , schema="UNIBO_PSV"):
     cursor.close()
     connection.close()
     return df
-
-connessione_DW()
