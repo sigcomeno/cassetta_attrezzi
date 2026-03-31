@@ -18,6 +18,7 @@ def to_pandas(id, export=False, limit= None):
     conn = connectMSTR()
     report = Report(conn, id)
     df= report.to_dataframe(limit=limit)
+    conn.close()
     if export:
         name = report.get("name")
         df.to_excel(f"DWH_{name}_{date.today()}.xlsx", index=False)
