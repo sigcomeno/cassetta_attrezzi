@@ -10,10 +10,20 @@ authors = [
   { name="ing. Comenò", email="rosato.fabio@gmail.com" }
 ]
 dependencies = [
-  "oracledb",
-  "pandas",
   "python-dotenv"
 ]
+
+[project.optional-dependencies]
+dwh = [
+  "oracledb",
+  "pandas"
+]
+
+mstr = [
+  "mstrio-py",
+  "pandas"
+]
+
 requires-python = ">=3.9"
 
 [tool.setuptools.packages.find]
